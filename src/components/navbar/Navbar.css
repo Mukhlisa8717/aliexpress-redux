@@ -1,0 +1,141 @@
+header {
+    margin-top: 12px;
+}
+
+.navbar {
+    display: flex;
+    background-color: #ff2521;
+    border-radius: 6px;
+    border: 1px solid #de2622;
+    padding: 8px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.navbar__logo{
+    display: flex;
+    align-items: center;
+    width: 30%;
+}
+
+.navbar__logo img{
+    width: 121px;
+    margin-left: 12px;
+}
+
+.navbar__menu {
+    display: flex;
+    gap: 5px;
+    width: 100%;
+    align-items: center;
+}
+
+.navigation__list {
+    display: flex;
+    list-style: none;
+    gap: 5px;
+}
+
+.navigation__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    background-color: #de2622;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    min-width: 58px;
+    min-height: 50px;
+    height: 100%;
+    text-decoration: none;
+}
+
+.navigation__btn:hover {
+    background-color: #d01815;
+}
+
+.navigation__btn-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.navigation__btn-item span {
+    margin-top: 2px;
+    font-size: 11px;
+}
+
+.search__form {
+    flex-grow: 1;
+    display: flex;
+    background-color: #fff;
+    border-radius: 6px;
+    gap: 16px;
+    padding: 3px;
+}
+
+.search__form input {
+    width: 93%;
+    padding: 16px;
+    border-radius: 6px;
+    border: 1px solid #de2622;
+    padding-left: 16px;
+    border: none;
+    outline: none;
+}
+
+.search__form button {
+    width: 15%;
+    background-color: #ccff66;
+    border: 1px solid #b2ed50;
+    border-radius: 100px;
+    cursor: pointer;
+}
+
+.search__form button:hover {
+    background-color: #bbed58;
+}
+
+.second__nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin: 5px 0;
+}
+
+.second__nav div{
+    display: flex;
+    grid-gap: 4px;
+}
+
+.second__nav-link{
+    display: flex;
+    text-decoration: none;
+    color: black;
+    font-size: 13px;
+    cursor: pointer;
+    background-color: #f0f4f7;
+    padding: 8px 10px;
+    grid-gap: 4px;
+    border-radius: 8px;
+}
+
+.second__nav-btn{
+    display: flex;
+    grid-gap: 4px;
+    align-items: center;
+    padding: 8px 10px;
+    cursor: pointer;
+    background-color: white;
+    border: 1px solid #dedee3;
+    border-radius: 8px;
+}
+
+.second__nav-btn:hover{
+    background-color: #f0f4f7;
+    border: none;
+}

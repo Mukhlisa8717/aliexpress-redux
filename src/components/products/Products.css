@@ -1,0 +1,40 @@
+.card__list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 11px;
+}
+
+.card{
+    width: 216px;
+}
+
+.card img{
+    width: 216px;
+    height: 216px;
+    border-radius: 24px;
+}
+
+.card a{
+    text-decoration: none;
+    color: black;
+}
+
+.card a p {
+    font-size: 14px;
+    font-weight: 100;
+}
+
+.card__rating{
+    font-size: 14px;
+}
+
+.like__btn{
+    background: none;
+    border: none;
+    margin-right: 5px;
+}
+.cart__btn{
+    background: none;
+    border: none;
+}

@@ -1,0 +1,19 @@
+/* .wrapper {
+    padding: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+.card {
+    width: 280px;
+    padding: 14px;
+    border: 1px solid gray;
+} */
+
+.container {
+    max-width: 1384px;
+    width: 100%;
+    padding: 0 16px;
+    margin: 0 auto;
+}
