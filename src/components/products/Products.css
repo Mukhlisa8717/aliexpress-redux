@@ -38,3 +38,7 @@
     background: none;
     border: none;
 }
+
+.products__title{
+    margin: 20px 0;
+}

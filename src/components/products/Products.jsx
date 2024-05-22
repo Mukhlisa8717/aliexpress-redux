@@ -39,7 +39,7 @@ const Products = ({ data, title }) => {
   return (
     <section className="products">
       <div className="container">
-        <h2>{title}</h2>
+        <h2 className="products__title">{title}</h2>
         <div className="card__list">{productItems}</div>
       </div>
     </section>
