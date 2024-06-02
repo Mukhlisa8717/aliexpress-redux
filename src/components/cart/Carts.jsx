@@ -1,17 +1,21 @@
 import React from "react";
 import "./Carts.css";
+import { useDispatch, useSelector } from "react-redux";
 import { RiDeleteBin6Line } from "react-icons/ri";
+import {
+  incrementCartQuantity,
+  decrementCartQuantity,
+  removeItemFromCart,
+} from "../../context/actions/cartAction.js";
 
 Number.prototype.brm = function () {
   return this.toFixed(2);
 };
 
-const Carts = ({
-  cart,
-  incrementCartQuantity,
-  decrementCartQuantity,
-  removeItemFromCart,
-}) => {
+const Carts = () => {
+  const dispatch = useDispatch();
+  const cart = useSelector((state) => state.cart);
+
   let totalPrice = cart?.reduce(
     (sum, item) => sum + item.price * item.quantity,
     0,
@@ -29,17 +33,19 @@ const Carts = ({
       <div className="product__numAction">
         <button
           disabled={item.quantity <= 1}
-          onClick={() => decrementCartQuantity(item.id)}
+          onClick={() => dispatch(decrementCartQuantity(item.id))}
         >
           -
         </button>
         <span>{item.quantity}</span>
-        <button onClick={() => incrementCartQuantity(item.id)}>+</button>
+        <button onClick={() => dispatch(incrementCartQuantity(item.id))}>
+          +
+        </button>
       </div>
       <h2>{(item.price * item.quantity).brm()} $</h2>
       <button
         className="product__delete-btn"
-        onClick={() => removeItemFromCart(item.id)}
+        onClick={() => dispatch(removeItemFromCart(item.id))}
       >
         <RiDeleteBin6Line size={20} color="white" />
       </button>

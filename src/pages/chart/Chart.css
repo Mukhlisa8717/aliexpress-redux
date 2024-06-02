@@ -1,0 +1,25 @@
+.hero__cont{
+    display: flex;
+    
+}
+
+.hero__cont div{
+    width: 50%;
+}
+
+.hero__btns{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+}
+
+.hero__btns button{
+    display: flex;
+    align-items: center;
+    padding: 15px 60px;
+    background-color: #b692ff;
+    border: none;
+    color: white;
+    font-weight: 600;
+}

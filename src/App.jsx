@@ -4,6 +4,7 @@ import Home from "./pages/home/Home"
 import Wishlist from "./pages/wishlist/Wishlist"
 import Cart from "./pages/cart/Cart"
 import "./App.css";
+import Chart from "./pages/chart/Chart"
 
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
       <Route path='/' element={<Home />}/>
       <Route path='/wishlist' element={<Wishlist />}/>
       <Route path="/cart" element={<Cart />}/>
+      <Route path="/chart" element={<Chart />}/>
     </Routes>
     </>
   )

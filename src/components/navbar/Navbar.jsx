@@ -6,6 +6,7 @@ import { PiScanSmileyFill } from "react-icons/pi";
 import { SiFireship } from "react-icons/si";
 import WhiteLogo from "../../assets/whiteLogo.png";
 import { FaLocationDot } from "react-icons/fa6";
+import { FaChartPie } from "react-icons/fa";
 
 const Navbar = () => {
   return (
@@ -44,10 +45,10 @@ const Navbar = () => {
                 </NavLink>
               </li>
               <li>
-                <NavLink className="navigation__btn" to={"/login"}>
+                <NavLink className="navigation__btn" to={"/chart"}>
                   <div className="navigation__btn-item">
-                    <PiScanSmileyFill size={24} color="#ffb700" />
-                    <span>Sign In</span>
+                    <FaChartPie size={24} />
+                    <span>Chart</span>
                   </div>
                 </NavLink>
               </li>

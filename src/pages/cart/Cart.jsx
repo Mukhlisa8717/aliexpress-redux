@@ -1,16 +1,15 @@
 import React from "react";
-import useStore from "../../context/store";
+import { useSelector, useDispatch } from "react-redux";
 import Carts from "../../components/cart/Carts";
+import {
+  incrementCartQuantity,
+  decrementCartQuantity,
+  removeItemFromCart,
+} from "../../context/actions/cartAction.js";
 
 const Cart = () => {
-  const cart = useStore((state) => state.cart);
-  const incrementCartQuantity = useStore(
-    (state) => state.incrementCartQuantity,
-  );
-  const decrementCartQuantity = useStore(
-    (state) => state.decrementCartQuantity,
-  );
-  const removeItemFromCart = useStore((state) => state.removeItemFromCart);
+  const dispatch = useDispatch();
+  const cart = useSelector((state) => state.cart);
 
   return (
     <section className="cart">
@@ -20,9 +19,15 @@ const Cart = () => {
           {cart.length ? (
             <Carts
               cart={cart}
-              incrementCartQuantity={incrementCartQuantity}
-              decrementCartQuantity={decrementCartQuantity}
-              removeItemFromCart={removeItemFromCart}
+              incrementCartQuantity={(itemId) =>
+                dispatch(incrementCartQuantity(itemId))
+              }
+              decrementCartQuantity={(itemId) =>
+                dispatch(decrementCartQuantity(itemId))
+              }
+              removeItemFromCart={(itemId) =>
+                dispatch(removeItemFromCart(itemId))
+              }
             />
           ) : (
             "Empty"

@@ -1,14 +1,15 @@
 import React from "react";
 import "./Products.css";
-import useStore from "../../context/store";
+import { useDispatch, useSelector } from "react-redux";
 import { FaHeart, FaRegHeart } from "react-icons/fa";
 import { IoCartOutline, IoStar } from "react-icons/io5";
 import { Link } from "react-router-dom";
+import { toggleLike } from "../../context/actions/wishlistActions";
+import { addToCart } from "../../context/actions/cartAction";
 
 const Products = ({ data, title }) => {
-  const wishlist = useStore((state) => state.wishlist);
-  const toggleLike = useStore((state) => state.toggleLike);
-  const addToCart = useStore((state) => state.addToCart);
+  const dispatch = useDispatch();
+  const wishlist = useSelector((state) => state.wishlist);
   const maxLength = 54;
   console.log(data);
 
@@ -23,14 +24,14 @@ const Products = ({ data, title }) => {
           <span className="card__rating"> {el.rating}</span>
         </div>
       </Link>
-      <button className="like__btn" onClick={() => toggleLike(el)}>
+      <button className="like__btn" onClick={() => dispatch(toggleLike(el))}>
         {wishlist.some((item) => item.id === el.id) ? (
           <FaHeart size={17} style={{ color: "red" }} />
         ) : (
           <FaRegHeart size={17} />
         )}
       </button>
-      <button className="cart__btn" onClick={() => addToCart(el)}>
+      <button className="cart__btn" onClick={() => dispatch(addToCart(el))}>
         <IoCartOutline size={17} />
       </button>
     </div>
