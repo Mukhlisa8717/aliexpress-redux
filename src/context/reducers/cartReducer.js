@@ -1,3 +1,4 @@
+import { toast } from 'react-toastify';
 import {
   ADD_TO_CART,
   INCREMENT_CART_QUANTITY,
@@ -13,7 +14,12 @@ const cartReducer = (state = initialState, action) => {
     case ADD_TO_CART: {
       const item = action.payload;
       const index = state.findIndex((el) => el.id === item.id);
-      const newState = index < 0 ? [...state, { ...item, quantity: 1 }] : state;
+      const newState = index < 0 ? [...state, { ...item, quantity: 1 } ]  : state;
+      if (index < 0) {
+        toast.success(`Added to cart!`);
+      } else{
+        toast.error(`Deleted from cart!`);
+      }
       localStorage.setItem("carts", JSON.stringify(newState));
       return newState;
     }
@@ -38,6 +44,7 @@ const cartReducer = (state = initialState, action) => {
     case REMOVE_ITEM_FROM_CART: {
       const newState = state.filter((item) => item.id !== action.payload);
       localStorage.setItem("carts", JSON.stringify(newState));
+      toast.info(`Removed from cart`);
       return newState;
     }
     case REMOVE_ALL_ITEMS_FROM_CART: {
